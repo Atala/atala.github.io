@@ -1,13 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Aloïs Website</title>
+    <title>Alois Website</title>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700,italic,bolditalic">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <nav>
-    </nav>
-    <h1>Title</h1>
-    <h1>Title</h1>
+    <div class="main-container">
+        <nav class="header">
+            <a class="logo" href="/">A</a>
+            <div class="nav">
+                <a class="nav__item nav__item--active">Skills</a>
+                <a class="nav__item">Projects</a>
+                <a class="nav__item" href="https://github.com/Atala">
+                    <img class="github-logo" src="img/github-logo.png">
+                </a>
+            </div>
+        </nav>
+        <section>
+            <div class="row">
+                <div class="col-1-2">
+                    <h1 class="h1">Aloïs Guillopé</h1>
+                    <h1 class="h2">Software developer</h1>
+                    <p>I am a goal-oriented developer based in Paris, France.<br>
+                       I write easy to maintain code following good practices.<br>
+                       I worked with both technical and non-technical people, and will be able to find the solution that fits your business needs.
+                    </p>
+                </div>
+                <div class="col-1-2">
+                    <img class="me-gif" src="img/alois.gif">
+                </div>
+            </div>
+        </section>
+        <div class="banner banner--skills">
+            <h1 class="h1 h1--banner">Skills</h1>
+        </div>
+            <div class="row">
+                <div class="col-1-3 language-item-container active">
+                    <img src="img/python-logo.png" class="language-item language-item--active">
+                    <h3 class="h3">Deep knowledge</h3>
+                </div><!--
+                --><div class="col-1-3 language-item-container">
+                    <img src="img/php-logo.png" class="language-item">
+                    <h3 class="h3">Deep knowledge</h3>
+                </div><!--
+                --><div class="col-1-3 language-item-container">
+                    <img src="img/js-logo.png" class="language-item">
+                    <h3 class="h3">Deep knowledge</h3>
+                </div>
+            </div>
+        </section>
+        <section class="banner banner--projects">
+            <h1 class="h1 h1--banner">Projects</h1>
+        </section>
+        <footer class="footer">
+        </footer>
+    </div>
 </body>
 </html>

@@ -1,0 +1,51 @@
+$header-height: 60px;
+$active-underline: 6px;
+
+.header {
+    $header-height: 60px;
+    border-bottom: 1px solid gray;
+}
+
+.logo {
+    line-height: $header-height;
+
+    color: $main-color;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.nav {
+    display: inline-block;
+    float: right;
+}
+
+.nav__item:before {
+    display: inline-block;
+    content: '';
+    height: 100%;
+    vertical-align: middle;
+}
+
+.nav__item {
+    display: inline-block;
+    width: 120px;
+
+    line-height: $header-height - $active-underline;
+    text-align: center;
+}
+
+.nav__item--active {
+    color: $main-color;
+    border-bottom: $active-underline solid $main-color;
+}
+
+.github-logo {
+    line-height: $header-height;
+    vertical-align: middle;
+}
+
+.github-logo {
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+}
