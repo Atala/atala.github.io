@@ -96,6 +96,6 @@ gulp.task('clean', () => del(['.tmp', 'docs/*', '!docs/.git'], {dot: true}));
 gulp.task('default', ['clean'], () =>
   runSequence(
     'styles',
-    'html'
+    ['html', 'images']
   )
 );
