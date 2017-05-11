@@ -36,7 +36,7 @@ gulp.task('styles', () => {
         .pipe($.size({title: 'styles'}))
         .pipe($.sourcemaps.write('./'))
         .pipe($.concat('style.css'))
-        .pipe(gulp.dest('dist/css'))
+        .pipe(gulp.dest('docs/css'))
         .pipe(gulp.dest('app/css'));
 });
 
@@ -57,7 +57,7 @@ gulp.task('html', () => {
     })))
     // Output files
     .pipe($.if('*.html', $.size({title: 'html', showFiles: true})))
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('docs'));
 });
 
 gulp.task('images', () =>
@@ -66,7 +66,7 @@ gulp.task('images', () =>
       progressive: true,
       interlaced: true
     }))
-    .pipe(gulp.dest('dist/img'))
+    .pipe(gulp.dest('docs/img'))
     .pipe($.size({title: 'images'}))
 );
 
@@ -90,7 +90,7 @@ gulp.task('serve', ['styles', 'images'], function () {
     gulp.watch(['app/img/**/*'], ['images', reload]);
 });
 
-gulp.task('clean', () => del(['.tmp', 'dist/*', '!dist/.git'], {dot: true}));
+gulp.task('clean', () => del(['.tmp', 'docs/*', '!docs/.git'], {dot: true}));
 
 // Build production files, the default task
 gulp.task('default', ['clean'], () =>
