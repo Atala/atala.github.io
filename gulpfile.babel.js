@@ -60,8 +60,18 @@ gulp.task('html', () => {
     .pipe(gulp.dest('dist'));
 });
 
+gulp.task('images', () =>
+  gulp.src('app/img/**/*')
+    .pipe($.imagemin({
+      progressive: true,
+      interlaced: true
+    }))
+    .pipe(gulp.dest('dist/img'))
+    .pipe($.size({title: 'images'}))
+);
 
-gulp.task('serve', ['styles'], function () {
+
+gulp.task('serve', ['styles', 'images'], function () {
     browserSync({
       notify: false,
       // Customize the Browsersync console logging prefix
@@ -77,6 +87,7 @@ gulp.task('serve', ['styles'], function () {
 
     gulp.watch(['app/**/*.html'], reload);
     gulp.watch(['app/css/**/*.scss'], ['styles', reload]);
+    gulp.watch(['app/img/**/*'], ['images', reload]);
 });
 
 gulp.task('clean', () => del(['.tmp', 'dist/*', '!dist/.git'], {dot: true}));
