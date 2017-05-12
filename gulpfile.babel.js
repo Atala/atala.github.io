@@ -60,6 +60,18 @@ gulp.task('html', () => {
     .pipe(gulp.dest('docs'));
 });
 
+// Copy all the non-HTML files at the root level
+gulp.task('copy', () =>
+  gulp.src([
+    'app/*',
+    '!app/*.html',
+    'node_modules/apache-server-configs/dist/.htaccess'
+  ], {
+    dot: true
+  }).pipe(gulp.dest('docs'))
+    .pipe($.size({title: 'copy'}))
+);
+
 gulp.task('images', () =>
   gulp.src('app/img/**/*')
     .pipe($.imagemin({
@@ -96,6 +108,6 @@ gulp.task('clean', () => del(['.tmp', 'docs/*', '!docs/.git'], {dot: true}));
 gulp.task('default', ['clean'], () =>
   runSequence(
     'styles',
-    ['html', 'images']
+    ['html', 'images', 'copy']
   )
 );
