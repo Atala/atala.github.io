@@ -43,6 +43,10 @@ gulp.task('styles', () => {
 // Scan your HTML for assets & optimize them
 gulp.task('html', () => {
   return gulp.src('app/**/*.html')
+    .pipe($.useref({
+      searchPath: '{app}',
+      noAssets: true
+    }))
     // Minify any HTML
     .pipe($.if('*.html', $.htmlmin({
       removeComments: true,
