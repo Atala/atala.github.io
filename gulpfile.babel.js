@@ -105,7 +105,7 @@ gulp.task('scripts', () =>
 );
 
 
-gulp.task('serve', ['styles', 'images'], function () {
+gulp.task('serve', ['styles', 'images', 'scripts'], function () {
     browserSync({
       notify: false,
       // Customize the Browsersync console logging prefix
@@ -122,6 +122,7 @@ gulp.task('serve', ['styles', 'images'], function () {
     gulp.watch(['app/**/*.html'], reload);
     gulp.watch(['app/css/**/*.scss'], ['styles', reload]);
     gulp.watch(['app/img/**/*'], ['images', reload]);
+    gulp.watch(['app/scripts/**/*.js'], ['scripts', reload]);
 });
 
 gulp.task('clean', () => del(['.tmp', 'docs/*', '!docs/.git'], {dot: true}));

@@ -1,12 +1,18 @@
 // Vars
 $main-color: #47CCAE;
 $banner-height: 120px;
+$header-height: 60px;
+$active-underline: 6px;
 
 // Resets
 
 a {
     text-decoration: none;
     cursor: pointer;
+}
+
+p {
+    margin: 0;
 }
 
 // Mixins
@@ -53,6 +59,11 @@ a {
     float: left;
 }
 
+.col-2-3 {
+    width: 66.6666666%;
+    float: left;
+}
+
 body {
     font-family: 'Noto Sans', serif;
     font-size: 20px;
@@ -91,8 +102,9 @@ section {
 
 
 .main-container {
+    position: relative;
     width: 1200px;
-    margin: auto;
+    margin: 2 * $header-height auto;
 }
 
 .me-gif {
@@ -103,6 +115,7 @@ section {
 }
 
 .banner {
+    margin-bottom: 20px;
     text-align: center;
     height: $banner-height;
 }
@@ -115,24 +128,47 @@ section {
    background-image: url('../img/alois-martin.jpg');
 }
 
+.main-description {
+    margin: 40px auto;
+}
+
 // Languages
 .language-item-container {
-    &:hover, &.active {
+    &.active {
         background-color: $main-color;
     }
-    padding: 20px 0;
-    text-align: center;
+    padding: 15px 30px;
     cursor: pointer;
 
-    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+}
 
-    &:first-child {
-        border-left: none;
+.language-item__img {
+    height: 30px;
+    margin-bottom: 5px;
+    vertical-align: middle;
+}
+
+.language-item-describer {
+    padding-left: 40px;
+    display: none;
+
+    @include vertical-centered;
+
+    &.active {
+        display: block;
     }
 }
 
-.language-item {
-    height: 40px;
-    margin-bottom: 5px;
+// Utilities
+
+.underlined {
+    color: $main-color;
+    display: inline-block;
+    border-bottom: 3px solid $main-color;
+    line-height: 18px;
 }
 
+.margin-bottom-md {
+    margin-bottom: 20px;
+}

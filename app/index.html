@@ -11,8 +11,8 @@
         <nav class="header">
             <a class="logo" href="/"><img src="img/logo-a.svg"></a>
             <div class="nav">
-                <a class="nav__item nav__item--active">Skills</a>
-                <a class="nav__item">Projects</a>
+                <a class="nav__item" id="skills-nav">Skills</a>
+                <a class="nav__item" id="projects-nav">Projects</a>
                 <a class="nav__item" href="https://github.com/Atala">
                     <img class="github-logo" src="img/github-logo.png">
                 </a>
@@ -37,17 +37,13 @@
             <h1 class="h1 h1--banner">Skills</h1>
         </div>
             <div class="row">
-                <div class="col-1-3 language-item-container active">
-                    <img src="img/python-logo.png" class="language-item language-item--active">
-                    <h3 class="h3">Deep knowledge</h3>
-                </div><!--
-                --><div class="col-1-3 language-item-container">
-                    <img src="img/php-logo.png" class="language-item">
-                    <h3 class="h3">Deep knowledge</h3>
-                </div><!--
-                --><div class="col-1-3 language-item-container">
-                    <img src="img/js-logo.png" class="language-item">
-                    <h3 class="h3">Deep knowledge</h3>
+                <div class="col-2-3 main-description">
+                    <p class="margin-bottom-md">I build applications from <span class="underlined">specification</span> to <span class="underlined">production</span>. As a developer I have worked with both marketing and support teams and helped to translate their business needs into technical requirements. After startup, I organize intermediary mileage meetings to assert the project is on track. My main goal is to <span class="underlined">deliver</span> the software that will fits your needs.</p>
+                    <p class="margin-bottom-md">On the frontend side, I can integrate any design you like in <span class="underlined">HTML/CSS</span> and to enhance the user's interactions with <span class="underlined">Javascript</span>. I can also build single page web-apps, with <span class="underlined">Backbone</span> and <span class="underlined">React</span>.
+                    </p>
+                    <p class="margin-bottom-md">For backend stuff, I use mostly <span class="underlined">Python</span>, as it is versatile and have a very complete ecosystem. I am familiar with both <span class="underlined">Flask</span> and <span class="underlined">Django</span>. I know some bits of PHP, as I have developed several simple websites with it. I am also experienced in <span class="underlined">Wordpress</span> and <span class="underlined">Prestashop</span> development.</p>
+                    <p class="margin-bottom-md">I have <span class="underlined">deployed</span>, <span class="underlined">maintained</span> and <span class="underlined">monitored</span> complex systems. They were involving <span class="underlined">SQL databases</span> (PostreSQL, MySQL), <span class="underlined">No-SQL stores</span> (Redis, MongoDB) and <span class="underlined">message brokers</span> (RabbitMQ). I can find the operating systems and cloud solution that will fit your case as I have experience with several of them (<span class="underlined">Heroku</span>, <span class="underlined">AWS</span>, <span class="underlined">OVH</span>).
+                    </p>
                 </div>
             </div>
         </section>
@@ -57,6 +53,6 @@
         <footer class="footer">
         </footer>
     </div>
-    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
 </body>
 </html>
