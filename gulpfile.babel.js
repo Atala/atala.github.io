@@ -13,6 +13,17 @@ import browserSync from 'browser-sync';
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
+/**
+ * Helper function to amend the pipe when a build task fails
+ * see https://github.com/hughsk/vinyl-transform/issues/1
+ * and: https://github.com/gulpjs/gulp/issues/259
+ * @param {string} err  the error string
+ */
+function onError (err) {
+    console.log(err);
+    this.emit('end'); // jshint ignore:line
+}
+
 gulp.task('styles', () => {
     const AUTOPREFIXER_BROWSERS = [
         'ie >= 10',
@@ -97,6 +108,9 @@ gulp.task('scripts', () =>
       './app/scripts/main.js'
       // Other scripts
     ])
+      .pipe($.plumber({
+            errorHandler: onError
+      }))
       .pipe($.sourcemaps.init())
       .pipe($.babel())
       .pipe($.sourcemaps.write())
