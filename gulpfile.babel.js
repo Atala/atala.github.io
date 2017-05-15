@@ -80,7 +80,6 @@ gulp.task('copy', () =>
   gulp.src([
     'app/*',
     '!app/*.html',
-    'node_modules/apache-server-configs/dist/.htaccess'
   ], {
     dot: true
   }).pipe(gulp.dest('docs'))
@@ -105,7 +104,6 @@ gulp.task('scripts', () =>
       // Note: Since we are not using useref in the scripts build pipeline,
       //       you need to explicitly list your scripts here in the right order
       //       to be correctly concatenated
-      './app/scripts/smooth-scroll.min.js',
       './app/scripts/main.js'
       // Other scripts
     ])
@@ -121,6 +119,22 @@ gulp.task('scripts', () =>
       .pipe($.size({title: 'scripts'}))
       .pipe($.sourcemaps.write('.'))
       .pipe(gulp.dest('docs/scripts'))
+);
+
+// Build and serve the output from the dist build
+gulp.task('serve:dist', ['default'], () =>
+  browserSync({
+    notify: false,
+    logPrefix: 'WSK',
+    // Allow scroll syncing across breakpoints
+    scrollElementMapping: ['main', '.mdl-layout'],
+    // Run as an https by uncommenting 'https: true'
+    // Note: this uses an unsigned certificate which on first access
+    //       will present a certificate warning in the browser.
+    // https: true,
+    server: 'docs',
+    port: 3001
+  })
 );
 
 
