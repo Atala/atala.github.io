@@ -40,6 +40,10 @@
 
     line-height: $header-height + $active-underline;
     text-align: center;
+
+    .nav__item:hover {
+        color: $main-color;
+    }
 }
 
 .nav__item--active {
