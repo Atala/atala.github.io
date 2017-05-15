@@ -6,6 +6,11 @@
     width: 1200px;
     $header-height: 60px;
     border-bottom: 1px solid gray;
+    padding: 0 10px;
+
+    @media screen and (max-width: 1200px) {
+        width: 100%;
+    }
 }
 
 .logo {
@@ -32,7 +37,7 @@
     display: inline-block;
     width: 120px;
 
-    line-height: $header-height - $active-underline;
+    line-height: $header-height + $active-underline;
     text-align: center;
 }
 
@@ -47,7 +52,6 @@
 }
 
 .github-logo {
-    margin: 10px;
     width: 40px;
     height: 40px;
 }

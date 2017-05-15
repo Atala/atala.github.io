@@ -405,13 +405,20 @@ template {
 
 /*# sourceMappingURL=normalize.css.map */
 
-{"version":3,"sources":["main.scss","header.scss"],"names":[],"mappings":"AAQA;EACI,sBAAqB;EACrB,gBAAe,EAClB;;AAED;EACI,UAAS,EACZ;;ACfD;EACI,WAAU;EACV,uBAAsB;EACtB,gBAAe;EACf,OAAM;EACN,cAAa;EAEb,8BAA6B,EAChC;;AAED;EACI,kBDRgB;ECUhB,eDZgB;ECahB,gBAAe;EACf,iBAAgB,EACnB;;AAED;EACI,sBAAqB;EACrB,aAAY,EACf;;AAED;EACI,sBAAqB;EACrB,YAAW;EACX,aAAY;EACZ,uBAAsB,EACzB;;AAED;EACI,sBAAqB;EACrB,aAAY;EAEZ,kBAA+C;EAC/C,mBAAkB,EACrB;;AAED;EACI,eDtCgB;ECuChB,iCDvCgB,ECwCnB;;AAED;EACI,kBDzCgB;EC0ChB,uBAAsB,EACzB;;AAED;EACI,aAAY;EACZ,YAAW;EACX,aAAY,EACf;;ADhBD;EACI,sBAAa;EAAb,qBAAa;EAAb,cAAa,EAYhB;EAbD;IAIM,eAAc;IACd,YAAW,EACZ;EANL;IASM,eAAc;IACd,YAAW;IACX,YAAW,EACZ;;AAGL;EACI,WAAU;EACV,YAAW,EACd;;AAED;EACI,oBAAmB;EACnB,YAAW,EACd;;AAED;EACI,mBAAkB;EAClB,YAAW,EACd;;AAED;EACI,gCAA+B;EAC/B,gBAAe;EACf,iBAAgB,EACnB;;AAED;EACI,eAAc,EACjB;;AAED;EACI,gBAAe;EACf,eA7EgB;EA8EhB,UAAS,EACZ;;AAED;EACI,2BAA0B;EA/D1B,mBAAkB;EAClB,SAAQ;EACR,oCAA2B;UAA3B,4BAA2B,EA+D9B;;AAED;EACI,gBAAe;EACf,mBAAkB;EAClB,eAzFgB;EA0FhB,UAAS;EACT,oBAAmB,EACtB;;AAED;EACI,gBAAe;EACf,mBAAkB;EAClB,UAAS;EACT,iBAAgB,EACnB;;AAGD;EACI,mBAAkB;EAClB,cAAa;EACb,mBAA+B,EAClC;;AAED;EACI,aAAY;EA1FZ,mBAAkB;EAClB,SAAQ;EACR,oCAA2B;UAA3B,4BAA2B;EAI3B,mBAAkB;EAClB,UAAS;EACT,SAAQ;EACR,qDAA4C;UAA5C,6CAA4C,EAqF/C;;AAED;EACI,oBAAmB;EACnB,mBAAkB;EAClB,cArHiB,EAsHpB;;AAED;EACG,gDAA+C,EACjD;;AAED;EACG,iDAAgD,EAClD;;AAED;EACI,kBAAiB,EACpB;;AAGD;EAII,mBAAkB;EAClB,gBAAe;EAEf,6BAA4B,EAC/B;EARD;IAEQ,0BAxIY,EAyIf;;AAOL;EACI,aAAY;EACZ,mBAAkB;EAClB,uBAAsB,EACzB;;AAED;EACI,mBAAkB;EAClB,cAAa;EArIb,mBAAkB;EAClB,SAAQ;EACR,oCAA2B;UAA3B,4BAA2B,EA0I9B;EATD;IAOQ,eAAc,EACjB;;AAKL;EACI,eApKgB;EAqKhB,sBAAqB;EACrB,iCAtKgB;EAuKhB,kBAAiB,EACpB;;AAED;EACI,oBAAmB,EACtB","file":"main.css","sourcesContent":["// Vars\n$main-color: #47CCAE;\n$banner-height: 120px;\n$header-height: 60px;\n$active-underline: 6px;\n\n// Resets\n\na {\n    text-decoration: none;\n    cursor: pointer;\n}\n\np {\n    margin: 0;\n}\n\n// Mixins\n\n@mixin vertical-centered {\n    position: relative;\n    top: 50%;\n    transform: translateY(-50%);\n}\n\n@mixin centered {\n    position: relative;\n    left: 50%;\n    top: 50%;\n    transform: translateX(-50%) translateY(-50%);\n}\n\n@import \"header.scss\";\n\n// Mini-grid\n\n.row {\n    display: flex;\n\n    &::before {\n      display: table;\n      content: \"\";\n    }\n\n    &::after {\n      display: table;\n      clear: both;\n      content: \"\";\n    }\n}\n\n.col-1-2 {\n    width: 50%;\n    float: left;\n}\n\n.col-1-3 {\n    width: 33.33333333%;\n    float: left;\n}\n\n.col-2-3 {\n    width: 66.6666666%;\n    float: left;\n}\n\nbody {\n    font-family: 'Noto Sans', serif;\n    font-size: 20px;\n    font-weight: 400;\n}\n\nsection {\n    margin: 60px 0;\n}\n\n.h1 {\n    font-size: 50px;\n    color: $main-color;\n    margin: 0;\n}\n\n.h1--banner {\n    text-transform: capitalize;\n    @include vertical-centered;\n}\n\n.h2 {\n    font-size: 30px;\n    font-style: italic;\n    color: $main-color;\n    margin: 0;\n    margin-bottom: 10px;\n}\n\n.h3 {\n    font-size: 20px;\n    font-style: italic;\n    margin: 0;\n    font-weight: 400;\n}\n\n\n.main-container {\n    position: relative;\n    width: 1200px;\n    margin: 2 * $header-height auto;\n}\n\n.me-gif {\n    width: 240px;\n\n    @include vertical-centered;\n    @include centered;\n}\n\n.banner {\n    margin-bottom: 20px;\n    text-align: center;\n    height: $banner-height;\n}\n\n.banner--skills {\n   background-image: url('../img/code-banner.jpg');\n}\n\n.banner--projects {\n   background-image: url('../img/alois-martin.jpg');\n}\n\n.main-description {\n    margin: 40px auto;\n}\n\n// Languages\n.language-item-container {\n    &.active {\n        background-color: $main-color;\n    }\n    padding: 15px 30px;\n    cursor: pointer;\n\n    border-right: 1px solid grey;\n}\n\n.language-item__img {\n    height: 30px;\n    margin-bottom: 5px;\n    vertical-align: middle;\n}\n\n.language-item-describer {\n    padding-left: 40px;\n    display: none;\n\n    @include vertical-centered;\n\n    &.active {\n        display: block;\n    }\n}\n\n// Utilities\n\n.underlined {\n    color: $main-color;\n    display: inline-block;\n    border-bottom: 3px solid $main-color;\n    line-height: 18px;\n}\n\n.margin-bottom-md {\n    margin-bottom: 20px;\n}\n",".header {\n    z-index: 1;\n    background-color: #fff;\n    position: fixed;\n    top: 0;\n    width: 1200px;\n    $header-height: 60px;\n    border-bottom: 1px solid gray;\n}\n\n.logo {\n    line-height: $header-height;\n\n    color: $main-color;\n    font-size: 40px;\n    font-weight: 700;\n}\n\n.nav {\n    display: inline-block;\n    float: right;\n}\n\n.nav__item:before {\n    display: inline-block;\n    content: '';\n    height: 100%;\n    vertical-align: middle;\n}\n\n.nav__item {\n    display: inline-block;\n    width: 120px;\n\n    line-height: $header-height - $active-underline;\n    text-align: center;\n}\n\n.nav__item--active {\n    color: $main-color;\n    border-bottom: $active-underline solid $main-color;\n}\n\n.github-logo {\n    line-height: $header-height;\n    vertical-align: middle;\n}\n\n.github-logo {\n    margin: 10px;\n    width: 40px;\n    height: 40px;\n}\n"]}
+{"version":3,"sources":["main.scss","header.scss"],"names":[],"mappings":"AAQA;EACI,sBAAqB;EACrB,gBAAe;EACf,aAAY,EACf;;AAED;EACI,UAAS,EACZ;;AAED;EACE,uBAAsB,EACvB;;AAED;EACE,oBAAmB,EACpB;;ACxBD;EACI,WAAU;EACV,uBAAsB;EACtB,gBAAe;EACf,OAAM;EACN,cAAa;EAEb,8BAA6B;EAC7B,gBAAe,EAKlB;EAHG;IAVJ;MAWQ,YAAW,EAElB,EAAA;;AAED;EACI,kBDbgB;ECehB,eDjBgB;ECkBhB,gBAAe;EACf,iBAAgB,EACnB;;AAED;EACI,sBAAqB;EACrB,aAAY,EACf;;AAED;EACI,sBAAqB;EACrB,YAAW;EACX,aAAY;EACZ,uBAAsB,EACzB;;AAED;EACI,sBAAqB;EACrB,aAAY;EAEZ,kBAA+C;EAC/C,mBAAkB,EACrB;;AAED;EACI,eD3CgB;EC4ChB,iCD5CgB,EC6CnB;;AAED;EACI,kBD9CgB;EC+ChB,uBAAsB,EACzB;;AAED;EACI,YAAW;EACX,aAAY,EACf;;ADXD;EAGM,eAAc;EACd,YAAW,EACZ;;AALL;EAQM,eAAc;EACd,YAAW;EACX,YAAW,EACZ;;AAGL;EACI,cAAa;EACb,WAAU;EACV,YAAW,EAKd;EAHG;IALJ;MAMQ,YAAW,EAElB,EAAA;;AAED;EACI,cAAa;EAEb,mBAAkB;EAClB,YAAW,EAKd;EAHG;IANJ;MAOQ,YAAW,EAElB,EAAA;;AAED;EACI,mBAAkB;EAClB,gCAA+B;EAC/B,gBAAe;EACf,iBAAgB,EACnB;;AAED;EACI,eAAc,EACjB;;AAED;EACI,gBAAe;EACf,eA5FgB;EA6FhB,UAAS,EACZ;;AAED;EACI,2BAA0B;EArE1B,mBAAkB;EAClB,SAAQ;EACR,oCAA2B;UAA3B,4BAA2B,EAqE9B;;AAED;EACI,gBAAe;EACf,mBAAkB;EAClB,eAxGgB;EAyGhB,UAAS;EACT,oBAAmB,EACtB;;AAED;EACI,gBAAe;EACf,mBAAkB;EAClB,UAAS;EACT,iBAAgB,EACnB;;AAGD;EACI,uBAAsB;EACtB,mBAAkB;EAClB,cAAa;EACb,mBAA+B,EAKlC;EAHG;IANJ;MAOQ,YAAW,EAElB,EAAA;;AAED;EACI,aAAY;EACZ,eAAc;EACd,aAAY,EAKf;EAHG;IALJ;MAMQ,cAAa,EAEpB,EAAA;;AAED;EACI,oBAAmB;EACnB,mBAAkB;EAClB,cA5IiB,EA6IpB;;AAED;EACG,gDAA+C,EACjD;;AAED;EACG,iDAAgD,EAClD;;AAED;EACI,kBAAiB,EACpB;;AAGD;EAII,mBAAkB;EAClB,gBAAe;EAEf,6BAA4B,EAC/B;EARD;IAEQ,0BA/JY,EAgKf;;AAOL;EACI,aAAY;EACZ,mBAAkB;EAClB,uBAAsB,EACzB;;AAED;EACI,mBAAkB;EAClB,cAAa;EAnJb,mBAAkB;EAClB,SAAQ;EACR,oCAA2B;UAA3B,4BAA2B,EAwJ9B;EATD;IAOQ,eAAc,EACjB;;AAKL;EACI,eA3LgB;EA4LhB,sBAAqB;EACrB,iCA7LgB;EA8LhB,kBAAiB,EACpB;;AAED;EACI,oBAAmB,EACtB","file":"main.css","sourcesContent":["// Vars\n$main-color: #47CCAE;\n$banner-height: 120px;\n$header-height: 60px;\n$active-underline: 6px;\n\n// Resets\n\na {\n    text-decoration: none;\n    cursor: pointer;\n    color: black;\n}\n\np {\n    margin: 0;\n}\n\nhtml {\n  box-sizing: border-box;\n}\n\n*, *:before, *:after {\n  box-sizing: inherit;\n}\n\n// Mixins\n\n@mixin vertical-centered {\n    position: relative;\n    top: 50%;\n    transform: translateY(-50%);\n}\n\n@mixin centered {\n    position: relative;\n    left: 50%;\n    top: 50%;\n    transform: translateX(-50%) translateY(-50%);\n}\n\n@import \"header.scss\";\n\n// Mini-grid\n\n.row {\n\n    &::before {\n      display: table;\n      content: \"\";\n    }\n\n    &::after {\n      display: table;\n      clear: both;\n      content: \"\";\n    }\n}\n\n.col-1-2 {\n    padding: 20px;\n    width: 50%;\n    float: left;\n\n    @media screen and (max-width: 1200px) {\n        width: 100%;\n    }\n}\n\n.col-2-3 {\n    padding: 20px;\n\n    width: 66.6666666%;\n    float: left;\n\n    @media screen and (max-width: 1200px) {\n        width: 100%;\n    }\n}\n\nbody {\n    overflow-x: hidden;\n    font-family: 'Noto Sans', serif;\n    font-size: 20px;\n    font-weight: 400;\n}\n\nsection {\n    margin: 60px 0;\n}\n\n.h1 {\n    font-size: 50px;\n    color: $main-color;\n    margin: 0;\n}\n\n.h1--banner {\n    text-transform: capitalize;\n    @include vertical-centered;\n}\n\n.h2 {\n    font-size: 30px;\n    font-style: italic;\n    color: $main-color;\n    margin: 0;\n    margin-bottom: 10px;\n}\n\n.h3 {\n    font-size: 20px;\n    font-style: italic;\n    margin: 0;\n    font-weight: 400;\n}\n\n\n.main-container {\n    box-sizing: border-box;\n    position: relative;\n    width: 1200px;\n    margin: 2 * $header-height auto;\n\n    @media screen and (max-width: 1200px) {\n        width: 100%;\n    }\n}\n\n.me-gif {\n    width: 240px;\n    display: block;\n    margin: auto;\n\n    @media screen and (max-width: 1200px) {\n        display: none;\n    }\n}\n\n.banner {\n    margin-bottom: 20px;\n    text-align: center;\n    height: $banner-height;\n}\n\n.banner--skills {\n   background-image: url('../img/code-banner.jpg');\n}\n\n.banner--projects {\n   background-image: url('../img/alois-martin.jpg');\n}\n\n.main-description {\n    margin: 40px auto;\n}\n\n// Languages\n.language-item-container {\n    &.active {\n        background-color: $main-color;\n    }\n    padding: 15px 30px;\n    cursor: pointer;\n\n    border-right: 1px solid grey;\n}\n\n.language-item__img {\n    height: 30px;\n    margin-bottom: 5px;\n    vertical-align: middle;\n}\n\n.language-item-describer {\n    padding-left: 40px;\n    display: none;\n\n    @include vertical-centered;\n\n    &.active {\n        display: block;\n    }\n}\n\n// Utilities\n\n.underlined {\n    color: $main-color;\n    display: inline-block;\n    border-bottom: 3px solid $main-color;\n    line-height: 18px;\n}\n\n.margin-bottom-md {\n    margin-bottom: 20px;\n}\n",".header {\n    z-index: 1;\n    background-color: #fff;\n    position: fixed;\n    top: 0;\n    width: 1200px;\n    $header-height: 60px;\n    border-bottom: 1px solid gray;\n    padding: 0 10px;\n\n    @media screen and (max-width: 1200px) {\n        width: 100%;\n    }\n}\n\n.logo {\n    line-height: $header-height;\n\n    color: $main-color;\n    font-size: 40px;\n    font-weight: 700;\n}\n\n.nav {\n    display: inline-block;\n    float: right;\n}\n\n.nav__item:before {\n    display: inline-block;\n    content: '';\n    height: 100%;\n    vertical-align: middle;\n}\n\n.nav__item {\n    display: inline-block;\n    width: 120px;\n\n    line-height: $header-height + $active-underline;\n    text-align: center;\n}\n\n.nav__item--active {\n    color: $main-color;\n    border-bottom: $active-underline solid $main-color;\n}\n\n.github-logo {\n    line-height: $header-height;\n    vertical-align: middle;\n}\n\n.github-logo {\n    width: 40px;\n    height: 40px;\n}\n"]}
 a {
   text-decoration: none;
-  cursor: pointer; }
+  cursor: pointer;
+  color: black; }
 
 p {
   margin: 0; }
+
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
 
 .header {
   z-index: 1;
@@ -419,7 +426,11 @@ p {
   position: fixed;
   top: 0;
   width: 1200px;
-  border-bottom: 1px solid gray; }
+  border-bottom: 1px solid gray;
+  padding: 0 10px; }
+  @media screen and (max-width: 1200px) {
+    .header {
+      width: 100%; } }
 
 .logo {
   line-height: 60px;
@@ -440,7 +451,7 @@ p {
 .nav__item {
   display: inline-block;
   width: 120px;
-  line-height: 54px;
+  line-height: 66px;
   text-align: center; }
 
 .nav__item--active {
@@ -452,35 +463,36 @@ p {
   vertical-align: middle; }
 
 .github-logo {
-  margin: 10px;
   width: 40px;
   height: 40px; }
 
-.row {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex; }
-  .row::before {
-    display: table;
-    content: ""; }
-  .row::after {
-    display: table;
-    clear: both;
-    content: ""; }
+.row::before {
+  display: table;
+  content: ""; }
+
+.row::after {
+  display: table;
+  clear: both;
+  content: ""; }
 
 .col-1-2 {
+  padding: 20px;
   width: 50%;
   float: left; }
-
-.col-1-3 {
-  width: 33.33333333%;
-  float: left; }
+  @media screen and (max-width: 1200px) {
+    .col-1-2 {
+      width: 100%; } }
 
 .col-2-3 {
+  padding: 20px;
   width: 66.6666666%;
   float: left; }
+  @media screen and (max-width: 1200px) {
+    .col-2-3 {
+      width: 100%; } }
 
 body {
+  overflow-x: hidden;
   font-family: 'Noto Sans', serif;
   font-size: 20px;
   font-weight: 400; }
@@ -514,21 +526,21 @@ section {
   font-weight: 400; }
 
 .main-container {
+  box-sizing: border-box;
   position: relative;
   width: 1200px;
   margin: 120px auto; }
+  @media screen and (max-width: 1200px) {
+    .main-container {
+      width: 100%; } }
 
 .me-gif {
   width: 240px;
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  position: relative;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-          transform: translateX(-50%) translateY(-50%); }
+  display: block;
+  margin: auto; }
+  @media screen and (max-width: 1200px) {
+    .me-gif {
+      display: none; } }
 
 .banner {
   margin-bottom: 20px;
