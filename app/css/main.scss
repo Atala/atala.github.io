@@ -58,22 +58,26 @@ html {
 }
 
 .col-1-2 {
-    padding: 20px;
     width: 50%;
     float: left;
 
     @media screen and (max-width: 1200px) {
+        margin-left: 0;
         width: 100%;
     }
 }
 
+.offset-1-6 {
+    margin-left: 16.6666666666%;
+}
+
 .col-2-3 {
-    padding: 20px;
 
     width: 66.6666666%;
     float: left;
 
     @media screen and (max-width: 1200px) {
+        margin-left: 0;
         width: 100%;
     }
 }
@@ -83,10 +87,6 @@ body {
     font-family: 'Noto Sans', serif;
     font-size: 20px;
     font-weight: 400;
-}
-
-section {
-    margin: 60px 0;
 }
 
 .h1 {
@@ -138,7 +138,6 @@ section {
 }
 
 .banner {
-    margin-bottom: 20px;
     text-align: center;
     height: $banner-height;
 }
@@ -152,34 +151,88 @@ section {
 }
 
 .main-description {
-    margin: 40px auto;
+    margin-top: 40px;
 }
 
-// Languages
-.language-item-container {
-    &.active {
-        background-color: $main-color;
+// Projects
+.project--brand {
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    text-align: center;
+
+    padding: 60px 20px;
+
+    img {
+        padding-top: 20px;
+        width: 220px;
     }
-    padding: 15px 30px;
-    cursor: pointer;
 
-    border-right: 1px solid grey;
+    @media screen and (max-width: 1200px) {
+        padding: 20px 20px;
+        background-image: none!important;
+    }
 }
 
-.language-item__img {
-    height: 30px;
-    margin-bottom: 5px;
-    vertical-align: middle;
+.project--brand__lima {
+    background-image: url('../img/lima-background.jpg');
+
+    .lima-logo-black {
+        display: none;
+    }
+
+    @media screen and (max-width: 1200px) {
+        .lima-logo {
+            display: none;
+        }
+
+        .lima-logo-black {
+            display: inline-block;
+        }
+    }
 }
 
-.language-item-describer {
-    padding-left: 40px;
-    display: none;
+.project--brand__ledej {
+    background-position: top left;
+    background-image: url('../img/ledej-background.jpg')
+}
 
-    @include vertical-centered;
+.project--description {
+    width: 50%;
+    float: right;
 
-    &.active {
-        display: block;
+    @media screen and (max-width: 1200px) {
+        width: 100%;
+        float: none;
+    }
+}
+
+.project--points {
+    text-align: left;
+    margin: 60px 0;
+    list-style: none;
+
+    li {
+        margin-top: 20px;
+    }
+
+    li:before {
+        transform: translateY(6%); // Didn't find a way to center it properly..
+
+        font-size: 30px;
+        padding-right: 10px;
+        content: '■';
+        color: $main-color;
+        display: inline-block;
+    }
+
+}
+
+.spacer {
+    text-align: center;
+
+    @media screen and (min-width: 1200px) {
+        display: none;
     }
 }
 
@@ -192,6 +245,18 @@ section {
     line-height: 18px;
 }
 
+.padding-left-md {
+    padding-left: 20px;
+}
+
+.padding-right-md {
+    padding-right: 20px;
+}
+
 .margin-bottom-md {
     margin-bottom: 20px;
+}
+
+.margin-bottom-l {
+    margin-bottom: 60px;
 }
