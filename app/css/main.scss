@@ -3,6 +3,7 @@ $main-color: #47CCAE;
 $banner-height: 120px;
 $header-height: 60px;
 $active-underline: 6px;
+$color-black: black;
 
 // Resets
 
@@ -115,12 +116,17 @@ body {
     font-weight: 400;
 }
 
+.link {
+    color: $main-color;
+    text-decoration: underline;
+}
+
 
 .main-container {
     box-sizing: border-box;
     position: relative;
     width: 1200px;
-    margin: 2 * $header-height auto;
+    margin: 2 * $header-height auto 0;
 
     @media screen and (max-width: 1200px) {
         width: 100%;
@@ -236,6 +242,11 @@ body {
     }
 }
 
+.footer {
+    height: 2px;
+    background-color: $main-color;
+}
+
 // Utilities
 
 .underlined {
@@ -243,6 +254,10 @@ body {
     display: inline-block;
     border-bottom: 3px solid $main-color;
     line-height: 18px;
+}
+
+.padding-top-md {
+    padding-top: 20px;
 }
 
 .padding-left-md {

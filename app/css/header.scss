@@ -7,6 +7,7 @@
     $header-height: 60px;
     border-bottom: 1px solid gray;
     padding: 0 10px;
+    height: 72px;
 
     @media screen and (max-width: 1200px) {
         width: 100%;
@@ -44,6 +45,17 @@
 .nav__item--active {
     color: $main-color;
     border-bottom: $active-underline solid $main-color;
+}
+
+.nav__item--contact {
+    color: #fff;
+    background-color: $main-color;
+    border-bottom: $active-underline solid $main-color;
+
+    &:hover {
+        background-color: #fff;
+        color: $color-black;
+    }
 }
 
 .github-logo {
