@@ -136,8 +136,13 @@ body {
     }
 }
 
-.me-gif {
-    width: 240px;
+.container__me {
+    display: flex;
+    align-items: center;
+}
+
+.picture__me {
+    width: 300px;
     display: block;
     margin: auto;
 
