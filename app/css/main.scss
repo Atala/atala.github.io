@@ -1,5 +1,8 @@
 // Vars
 $main-color: #47CCAE;
+$bg-color: #faf4e1;
+$white-color: #fff;
+
 $banner-height: 120px;
 $header-height: 60px;
 $active-underline: 6px;
@@ -91,6 +94,7 @@ body {
     font-family: 'Noto Sans', serif;
     font-size: $base-font-size;
     font-weight: 400;
+    background-color: lighten($bg-color, 3);
 }
 
 .h1 {
