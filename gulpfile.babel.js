@@ -47,7 +47,7 @@ gulp.task('styles', () => {
         .pipe($.size({title: 'styles'}))
         .pipe($.sourcemaps.write('./'))
         .pipe($.concat('style.css'))
-        .pipe(gulp.dest('docs/css'))
+        .pipe(gulp.dest('./css'))
         .pipe(gulp.dest('app/css'));
 });
 
@@ -72,7 +72,7 @@ gulp.task('html', () => {
     })))
     // Output files
     .pipe($.if('*.html', $.size({title: 'html', showFiles: true})))
-    .pipe(gulp.dest('docs'));
+    .pipe(gulp.dest('.'));
 });
 
 // Copy all the non-HTML files at the root level
@@ -82,7 +82,7 @@ gulp.task('copy', () =>
     '!app/*.html',
   ], {
     dot: true
-  }).pipe(gulp.dest('docs'))
+  }).pipe(gulp.dest('.'))
     .pipe($.size({title: 'copy'}))
 );
 
@@ -92,7 +92,7 @@ gulp.task('images', () =>
       progressive: true,
       interlaced: true
     }))
-    .pipe(gulp.dest('docs/img'))
+    .pipe(gulp.dest('./img'))
     .pipe($.size({title: 'images'}))
 );
 
@@ -118,7 +118,7 @@ gulp.task('scripts', () =>
       // Output files
       .pipe($.size({title: 'scripts'}))
       .pipe($.sourcemaps.write('.'))
-      .pipe(gulp.dest('docs/scripts'))
+      .pipe(gulp.dest('./scripts'))
 );
 
 // Build and serve the output from the dist build
@@ -132,7 +132,7 @@ gulp.task('serve:dist', ['default'], () =>
     // Note: this uses an unsigned certificate which on first access
     //       will present a certificate warning in the browser.
     // https: true,
-    server: 'docs',
+    server: '.',
     port: 3001
   })
 );
