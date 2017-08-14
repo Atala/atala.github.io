@@ -86,6 +86,14 @@ gulp.task('copy', () =>
     .pipe($.size({title: 'copy'}))
 );
 
+gulp.task('copy-smoothscroll', () =>
+  gulp.src([
+    './app/scripts/smooth-scroll.min.js',
+  ], {
+    dot: true
+  }).pipe(gulp.dest('./scripts'))
+);
+
 gulp.task('images', () =>
   gulp.src('app/img/**/*')
     .pipe($.imagemin({
@@ -104,7 +112,6 @@ gulp.task('scripts', () =>
       // Note: Since we are not using useref in the scripts build pipeline,
       //       you need to explicitly list your scripts here in the right order
       //       to be correctly concatenated
-      './app/scripts/smooth-scroll.min.js',
       './app/scripts/main.js'
       // Other scripts
     ])
@@ -165,6 +172,6 @@ gulp.task('clean', () => del(['.tmp', 'docs/*', '!docs/.git'], {dot: true}));
 gulp.task('default', ['clean'], () =>
   runSequence(
     'styles',
-    ['html', 'images', 'copy', 'scripts']
+    ['html', 'images', 'copy', 'scripts', 'copy-smoothscroll']
   )
 );
