@@ -10,7 +10,10 @@ $color-black: black;
 
 $base-font-size: 1em;
 $l-font-size: $base-font-size * 1.5;
-$xl-font-size: $base-font-size * 2.5;
+$xl-font-size: $base-font-size * 2;
+
+$medium-desktop-width: 1200px;
+$phone-width: 400px;
 
 // Resets
 
@@ -90,7 +93,6 @@ html {
 }
 
 body {
-    overflow-x: hidden;
     font-family: 'Noto Sans', serif;
     font-size: $base-font-size;
     font-weight: 400;
@@ -128,6 +130,7 @@ body {
 
 
 .main-container {
+    overflow-x: hidden;
     box-sizing: border-box;
     position: relative;
     width: 1200px;

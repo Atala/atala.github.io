@@ -10,7 +10,9 @@ $header-height: 60px;
     padding: 0 10px;
 
     @media screen and (max-width: 1200px) {
-        width: 100%;
+        width: auto;
+        left: 0;
+        right: 0;
     }
 }
 
@@ -44,6 +46,11 @@ $header-height: 60px;
 
     &.nav__item:hover {
         color: $main-color;
+    }
+
+    @media screen and (max-width: $phone-width) {
+        width: auto;
+        margin: 0 15px;
     }
 }
 
